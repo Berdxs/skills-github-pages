@@ -1,87 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quer Namorar Comigo?</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: #f5f5f5;
-    }
-    .container {
-      text-align: center;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 10px;
-      transition: all 0.3s ease;
-    }
-    #yes {
-      background-color: #4CAF50;
-      color: white;
-    }
-    #no {
-      background-color: #f44336;
-      color: white;
-      position: absolute;
-    }
-    #message {
-      display: none;
-      margin-top: 20px;
-      font-size: 20px;
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>teste ❤️</h1>
-    <button id="yes">Sim</button>
-    <button id="no">Não</button>
-    <p id="message">teste! 💖</p>
-  </div>
 
-  <script>
-    const noButton = document.getElementById('no');
-    const yesButton = document.getElementById('yes');
-    const message = document.getElementById('message');
-    const container = document.querySelector('.container');
 
-    // Função para mover o botão "Não"
-    function moveButton() {
-      const containerRect = container.getBoundingClientRect();
-      const maxX = containerRect.width - noButton.offsetWidth;
-      const maxY = containerRect.height - noButton.offsetHeight;
+<!--
+  <<< Author notes: Step 4 >>>
+  Start this step by acknowledging the previous step.
+  Define terms and link to docs.github.com.
+  Historic note: previous version checked the file path. Previous version checked the front matter formatting.
+-->
 
-      const randomX = Math.random() * maxX;
-      const randomY = Math.random() * maxY;
+## Step 4: Create a blog post
 
-      noButton.style.left = `${randomX}px`;
-      noButton.style.top = `${randomY}px`;
-    }
+_Your home page is looking great! :cowboy_hat_face:_
 
-    // Evento para o botão "Sim"
-    yesButton.addEventListener('click', () => {
-      message.style.display = 'block'; // Mostra a mensagem
-    });
+GitHub Pages uses Jekyll. In Jekyll, we can create a blog by using specially named files and frontmatter. The files must be named `_posts/YYYY-MM-DD-title.md`. You must also include `title` and `date` in your frontmatter.
 
-    // Eventos para o botão "Não"
-    noButton.addEventListener('mouseenter', moveButton); // Para computadores
-    noButton.addEventListener('touchstart', moveButton); // Para celulares
-  </script>
-</body>
-</html>
-_config.yml_config.yml
-theme: minima
+**What is _frontmatter_?**: The syntax Jekyll files use is called YAML frontmatter. It goes at the top of your file and looks something like this:
+
+```yml
+---
+title: "Welcome to my blog"
+date: 2019-01-20
+---
+```
+
+For more information about configuring front matter, see the [Jekyll frontmatter documentation](https://jekyllrb.com/docs/frontmatter/).
+
+### :keyboard: Activity: Create a blog post
+
+1. Browse to the `my-pages` branch.
+1. Click the `Add file` dropdown menu and then on `Create new file`.
+1. Name the file `_posts/YYYY-MM-DD-title.md`.
+1. Replace the `YYYY-MM-DD` with today's date, and change the `title` of your first blog post if you'd like.
+   > If you do edit the title, make sure there are hyphens between your words.
+   > If your blog post date doesn't follow the correct date convention, you'll receive an error and your site won't build. For more information, see "[Page build failed: Invalid post date](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/troubleshooting-jekyll-build-errors-for-github-pages-sites)".
+1. Type the following content at the top of your blog post:
+   ```yaml
+   ---
+   title: "YOUR-TITLE"
+   date: YYYY-MM-DD
+   ---
+   ```
+1. Replace `YOUR-TITLE` with the title for your blog post.
+1. Replace `YYYY-MM-DD` with today's date.
+1. Type a quick draft of your blog post. Remember, you can always edit it later.
+1. Commit your changes to your branch.
+1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 
